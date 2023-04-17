@@ -1,0 +1,18 @@
+mutation CreateChannel($name: String!, $token: String!) {
+  createChannel(name: $name, token: $token) {
+    id
+    name
+    token
+  }
+}
+
+mutation PublishToChannel($channel: ID!, $message: String!, $title: String!) {
+  publishToChannel(channel: $channel, message: $message, title: $title) {
+    status
+    channel {
+      id
+      name
+      token
+    }
+  }
+}
